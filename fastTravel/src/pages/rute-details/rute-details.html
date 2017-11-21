@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{rute.name}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-refresher pulling-icon="ion-load-d" spinner="ios-small"></ion-refresher>
+  <ng-template ngFor let-town [ngForOf]="rute.towns">
+    <div class="divider-title">{{town.name}}</div>
+    <ul class="timeline">
+      <ng-template ngFor let-place [ngForOf]="town.places">
+        <ng-template ngFor let-activity [ngForOf]="place.activities">
+          <li (swipe)="viewActivityDetail(activity, $event)">
+            <div class="timeline-thumb bg-color-white timeline-icon">
+              <img src="{{activity.images[0]}}">
+            </div>
+            <div class="timeline-item">
+              <h6 style="padding-top: 10px;">{{place.name}}</h6>
+              <h6>{{activity.name}}</h6>
+              <div class="timeline-stats">
+                <i class="ion-heart"></i> {{activity.price | currency}}
+                <span class="pos-absolute-right">
+                  <i class="ion-ios-clock"></i>{{activity.time + ' minutos'}}</span>
+              </div>
+            </div>
+          </li>
+        </ng-template>
+      </ng-template>
+    </ul>
+  </ng-template>
+</ion-content>

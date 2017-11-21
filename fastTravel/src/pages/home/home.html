@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Fast Travel</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="container-fluid">
+    <div class="row">
+      <ng-template ngFor let-rute [ngForOf]="rutes">
+        <div class="col-sm-12">
+          <rute-preview [rute]="rute"></rute-preview>
+        </div>
+      </ng-template>
+    </div>
+  </div>
+</ion-content>

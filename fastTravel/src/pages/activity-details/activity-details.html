@@ -1,0 +1,70 @@
+<!--
+  Generated template for the ActivityDetailsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{activity.name}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card>
+    <ion-card-content>
+      <img src="{{activity.images[image]}}" />
+    </ion-card-content>
+
+    <ion-item>
+      <button ion-button clear item-start>{{activity.price | currency}}</button>
+      <button ion-button clear item-end>{{activity.time + ' minutos'}}</button>
+    </ion-item>
+  </ion-card>
+
+  <ion-item-group>
+    <ion-item-divider color="light">Recomendaciones</ion-item-divider>
+    <ng-template ngFor let-recomendation [ngForOf]="activity.recommendations">
+      <ion-item>
+        <p>
+          {{recomendation}}
+        </p>
+      </ion-item>
+    </ng-template>
+    <ion-item-divider color="light">Comentarios</ion-item-divider>
+    <ion-list>
+      <ng-template ngFor let-comment [ngForOf]="activity.comments">
+        <ion-item>
+          <h2>{{comment.user}}</h2>
+          <p>
+            {{comment.comment}}
+          </p>
+        </ion-item>
+      </ng-template>
+    </ion-list>
+    <ion-item-divider color="light">Puntuación</ion-item-divider>
+    <ion-list>
+      <ion-range min="0" max="5" step="1" snaps="true" pin="true" [(ngModel)]="activity.scores[0]" color="danger">
+        <ion-icon range-left small color="danger" name="medal"></ion-icon>
+        <ion-icon range-right color="danger" name="flag"></ion-icon>
+      </ion-range>
+      <ion-range min="0" max="5" step="1" snaps="true" pin="true" [(ngModel)]="activity.scores[1]" color="danger">
+        <ion-icon range-left small color="danger" name="bowtie"></ion-icon>
+        <ion-icon range-right color="danger" name="flag"></ion-icon>
+      </ion-range>
+      <ion-range min="0" max="5" step="1" snaps="true" pin="true" [(ngModel)]="activity.scores[2]" color="danger">
+        <ion-icon range-left small color="danger" name="cash"></ion-icon>
+        <ion-icon range-right color="danger" name="flag"></ion-icon>
+      </ion-range>
+    </ion-list>
+  </ion-item-group>
+  <div>
+    <button ion-button color="primary" block>Puntuar</button>
+  </div>
+  <div>
+    <button ion-button color="primary" block>Experiencia VR</button>
+  </div>
+</ion-content>
