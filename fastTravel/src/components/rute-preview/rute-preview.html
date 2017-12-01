@@ -1,18 +1,6 @@
-<ion-card (click)="goToPage()">
-  <img src="{{rute.image}}" />
-  <ion-card-content>
-    <ion-card-title>
-      {{rute.title}}
-    </ion-card-title>
-  </ion-card-content>
-  <ion-row no-padding>
-    <ion-col>
-      <button ion-button clear small color="danger" icon-start>
-        <ion-icon name='star'></ion-icon>
-        <ng-template ngFor let-star [ngForOf]="stars">
-          <ion-icon name='star'></ion-icon>
-        </ng-template>
-      </button>
-    </ion-col>
-  </ion-row>
-</ion-card>
+<img style="
+width: 100vw;
+margin-left: -31px;
+border-bottom: 5px solid rgb(113, 76, 57);
+max-width: none; 
+" src="{{'../../assets/imgs/' + rute.image}}" (swipe)="goToPage()" />

@@ -1,2 +1,63 @@
 @import "./node_modules/bootstrap/scss/bootstrap";
 @import './node_modules/font-awesome/scss/font-awesome';
+@font-face {
+    font-family: BebasNeue;
+    src: url('./../assets/fonts/bebas/TTF/BebasNeue Regular.ttf');
+}
+@font-face {
+    font-family: BebasNeue;
+    font-weight: bold;
+    src: url('./../assets/fonts/bebas/TTF/BebasNeue Bold.ttf');
+}
+@font-face {
+    font-family: BebasNeue;
+    font-weight: lighter;
+    src: url('./../assets/fonts/bebas/TTF/BebasNeue Light.ttf');
+}
+
+* {
+    font-family: BebasNeue;
+}
+
+
+body {
+    background-color: rgb(239, 207, 134);
+}
+
+
+/**    MENU STYLES             **/
+ion-header {
+    ion-navbar{
+        div.toolbar-background  {
+            background-color: rgb(213, 93, 44);
+        }
+        button.bar-button-md {
+            color: rgb(215, 159, 70);
+        }
+        div.toolbar-content ion-title div label {
+            color: white;
+        }
+        div.toolbar-content ion-title div label.route {
+            font-weight: bold;
+        }
+        div.toolbar-content ion-title div.toolbar-title {
+            padding-left: 25vw;
+        }
+    }
+    ion-toolbar {
+        div.toolbar-background {
+            background-color: rgb(213, 93, 44);
+        }
+        div.toolbar-content ion-title div {
+            color: white;
+        }
+
+    }
+}
+
+ion-nav page-home ion-content div.scroll-content {
+    padding-top: 56px !important;
+}
+div.fixed-content {
+    background-color: #efcf86;
+}

@@ -37934,6 +37934,68 @@ a.text-dark:focus, a.text-dark:hover {
   clip: auto;
 }
 
+@font-face {
+  font-family: BebasNeue;
+  src: url("./../assets/fonts/bebas/TTF/BebasNeue Regular.ttf");
+}
+
+@font-face {
+  font-family: BebasNeue;
+  font-weight: bold;
+  src: url("./../assets/fonts/bebas/TTF/BebasNeue Bold.ttf");
+}
+
+@font-face {
+  font-family: BebasNeue;
+  font-weight: lighter;
+  src: url("./../assets/fonts/bebas/TTF/BebasNeue Light.ttf");
+}
+
+* {
+  font-family: BebasNeue;
+}
+
+body {
+  background-color: #efcf86;
+}
+
+/**    MENU STYLES             **/
+ion-header ion-navbar div.toolbar-background {
+  background-color: #d55d2c;
+}
+
+ion-header ion-navbar button.bar-button-md {
+  color: #d79f46;
+}
+
+ion-header ion-navbar div.toolbar-content ion-title div label {
+  color: white;
+}
+
+ion-header ion-navbar div.toolbar-content ion-title div label.route {
+  font-weight: bold;
+}
+
+ion-header ion-navbar div.toolbar-content ion-title div.toolbar-title {
+  padding-left: 25vw;
+}
+
+ion-header ion-toolbar div.toolbar-background {
+  background-color: #d55d2c;
+}
+
+ion-header ion-toolbar div.toolbar-content ion-title div {
+  color: white;
+}
+
+ion-nav page-home ion-content div.scroll-content {
+  padding-top: 56px !important;
+}
+
+div.fixed-content {
+  background-color: #efcf86;
+}
+
 .blue {
   color: #3b5998;
 }
