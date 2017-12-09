@@ -28,7 +28,7 @@ export class RutePreviewComponent implements OnChanges {
     }
   }
   goToPage() {
-    this.navCtrl.setRoot(RuteDetailsPage, {
+    this.navCtrl.push(RuteDetailsPage, {
       'rute': this.rute
     });
   }

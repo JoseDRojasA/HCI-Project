@@ -1,3 +1,74 @@
-page-activity-details {
+.background {
+    width: 100vw;
+    background-color: rgba(239, 213, 126, 0.8);
+    height: 100%;
+    position: absolute;
+    top: 0px;
+}
+.recommendations {
+    color: white;
+    position: absolute;
+    top: 70px;
+    left: 30px;
+    span {
+        font-weight: bolder;
+        font-size: 26px;
+    }
+    ul li {
+    font-size: 14px;
+    font-weight: normal;
+    font-family: roboto;
+    }
+}
+.time_price {
+    padding: 10px 30px;
+    table {
+        width: 100%;
+        /* font-family: roboto; */
+        color: black;
+        td {
+            font-family: roboto;
+        }
+        tr:first-child {
+            border-bottom: #f0ca68 2px solid
+        }
+        td:last-child {
+            text-align: right;
+        }
+    }
+}
 
+.ranking-container {
+    padding: 0 40px;
+    table {
+        width: 100%; 
+    }
+}
+
+.image {
+    position: relative;
+}
+.user-image { 
+    max-width: 60px;
+    border-radius: 100px;
+}
+.user-comment {
+    margin-left: 15px;
+    border-left: rgb(222, 163, 62) 1px solid;
+    padding-left: 5px;
+}
+.user-name {
+    padding-left: 5px;
+    padding-top: 15px;
+    margin: 0;
+}
+.icon-table {
+    width: 100%;
+    text-align: right;
+}
+.points-td {
+    text-align: center;
+    ion-icon {
+        padding-left: 10px;
+    }
 }

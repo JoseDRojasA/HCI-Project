@@ -12,59 +12,97 @@
     <ion-title>{{activity.name}}</ion-title>
   </ion-navbar>
 </ion-header>
+<div class="image">
 
-<ion-content padding>
-  <ion-card>
-    <ion-card-content>
-      <img src="{{activity.images[image]}}" />
-    </ion-card-content>
+  <img style="
+    padding-top: 55px;
+    " src="{{'assets/imgs/' + activity.images[image]}}" />
 
-    <ion-item>
-      <button ion-button clear item-start>{{activity.price | currency}}</button>
-      <button ion-button clear item-end>{{activity.time + ' minutos'}}</button>
-    </ion-item>
-  </ion-card>
+  <div class="background">
 
-  <ion-item-group>
-    <ion-item-divider color="light">Recomendaciones</ion-item-divider>
-    <ng-template ngFor let-recomendation [ngForOf]="activity.recommendations">
-      <ion-item>
-        <p>
-          {{recomendation}}
-        </p>
-      </ion-item>
-    </ng-template>
-    <ion-item-divider color="light">Comentarios</ion-item-divider>
-    <ion-list>
-      <ng-template ngFor let-comment [ngForOf]="activity.comments">
-        <ion-item>
-          <h2>{{comment.user}}</h2>
-          <p>
+  </div>
+  <div class="recommendations">
+    <span>Recomendaciones</span>
+    <ul>
+      <ng-template ngFor let-recommendation [ngForOf]="activity.recommendations">
+        <li>{{recommendation}}</li>
+      </ng-template>
+    </ul>
+  </div>
+</div>
+<div class="time_price">
+  <table>
+    <tbody>
+      <tr>
+        <td>
+          {{'USD ' + activity.price}}
+        </td>
+        <td>
+          {{activity.time + ' minutos'}}
+        </td>
+      </tr>
+      <tr>
+        <td>
+        </td>
+        <td>
+          240 votos
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="ranking-container">
+  <ion-range min="1" max="5" step="1" snaps="true" [(ngModel)]="activity.scores[0]" color="danger">
+    <ion-icon range-right color="brown" name="flag"></ion-icon>
+  </ion-range>
+
+  <ion-range min="1" max="5" step="1" snaps="true" [(ngModel)]="activity.scores[1]" color="danger">
+    <ion-icon range-right color="brown" name="flag"></ion-icon>
+  </ion-range>
+
+  <ion-range min="1" max="5" step="1" snaps="true" [(ngModel)]="activity.scores[2]" color="danger" style="border-bottom: #f0ca68 2px solid;">
+    <ion-icon range-right color="brown" name="flag"></ion-icon>
+  </ion-range>
+</div>
+<div class="ranking-container">
+  <table *ngFor="let comment of activity.comments">
+    <tbody>
+      <tr>
+        <td style="width: 70px;">
+          <img class="user-image" src="{{'assets/imgs/' + comment.image}}">
+        </td>
+        <td>
+          <p class="user-name">
+            {{comment.user}}
+          </p>
+
+          <p class="user-comment">
             {{comment.comment}}
           </p>
-        </ion-item>
-      </ng-template>
-    </ion-list>
-    <ion-item-divider color="light">Puntuación</ion-item-divider>
-    <ion-list>
-      <ion-range min="0" max="5" step="1" snaps="true" pin="true" [(ngModel)]="activity.scores[0]" color="danger">
-        <ion-icon range-left small color="danger" name="medal"></ion-icon>
-        <ion-icon range-right color="danger" name="flag"></ion-icon>
-      </ion-range>
-      <ion-range min="0" max="5" step="1" snaps="true" pin="true" [(ngModel)]="activity.scores[1]" color="danger">
-        <ion-icon range-left small color="danger" name="bowtie"></ion-icon>
-        <ion-icon range-right color="danger" name="flag"></ion-icon>
-      </ion-range>
-      <ion-range min="0" max="5" step="1" snaps="true" pin="true" [(ngModel)]="activity.scores[2]" color="danger">
-        <ion-icon range-left small color="danger" name="cash"></ion-icon>
-        <ion-icon range-right color="danger" name="flag"></ion-icon>
-      </ion-range>
-    </ion-list>
-  </ion-item-group>
-  <div>
-    <button ion-button color="primary" block>Puntuar</button>
-  </div>
-  <div>
-    <button ion-button color="primary" block>Experiencia VR</button>
-  </div>
-</ion-content>
+          <div>
+            <table class="icon-table">
+              <tr>
+                <td class="points-td">
+                  <ion-icon name="ios-thumbs-up-outline"></ion-icon>
+                  <label>{{comment.stars[0]}}</label>
+
+                  <ion-icon name="ios-thumbs-down-outline"></ion-icon>
+                  <label>{{comment.stars[1]}}</label>
+
+                  <ion-icon name="ios-text-outline"></ion-icon>
+                  <label>Comentar</label>
+                </td>
+
+                <td>
+                  {{comment.date}}
+                </td>
+              </tr>
+            </table>
+
+
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

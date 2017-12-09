@@ -14,7 +14,10 @@
     font-weight: lighter;
     src: url('./../assets/fonts/bebas/TTF/BebasNeue Light.ttf');
 }
-
+@font-face {
+    font-family: BebasNeueBook;
+    src: url('../assets/fonts/bebas/TTF/BebasNeue Book.ttf');
+}
 * {
     font-family: BebasNeue;
 }
@@ -27,7 +30,7 @@ body {
 
 /**    MENU STYLES             **/
 ion-header {
-    ion-navbar{
+    ion-navbar {
         div.toolbar-background  {
             background-color: rgb(213, 93, 44);
         }
@@ -44,6 +47,9 @@ ion-header {
             padding-left: 25vw;
         }
     }
+
+
+
     ion-toolbar {
         div.toolbar-background {
             background-color: rgb(213, 93, 44);
@@ -54,10 +60,34 @@ ion-header {
 
     }
 }
+.toolbar-title-md{
+    font-weight: bold;
+    color: white;
+}
+ion-content div.scroll-content {
+    background-color: #efcf86 !important;
+}
 
 ion-nav page-home ion-content div.scroll-content {
     padding-top: 56px !important;
 }
-div.fixed-content {
-    background-color: #efcf86;
+.ion-page {
+    background-color: #efd57e !important;
+}
+
+.ion-page.show-page {
+    opacity: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/** RANGE STYLES **/
+.range-knob, .range-bar.range-bar-active {
+    background: rgb(208, 127, 47)!important;
+}
+.icon-md-brown {
+    color:  rgb(208, 127, 47)!important;
+}
+.range-bar {
+    background: rgb(234, 199, 81) !important;
 }

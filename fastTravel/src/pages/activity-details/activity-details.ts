@@ -19,6 +19,7 @@ export class ActivityDetailsPage {
     this.changeImage();
   }
   changeImage() {
+    /*
     setTimeout(() => {
       if (this.image < this.activity.images.length - 1) {
         this.image++;
@@ -28,5 +29,6 @@ export class ActivityDetailsPage {
       console.log(this.image);
       this.changeImage();
     }, 2000);
+    */
   }
 }

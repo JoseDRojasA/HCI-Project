@@ -15,16 +15,16 @@
       <ng-template ngFor let-place [ngForOf]="town.places">
         <ng-template ngFor let-activity [ngForOf]="place.activities">
           <li (swipe)="viewActivityDetail(activity, $event)">
-            <div class="timeline-thumb bg-color-white timeline-icon">
-              <img src="{{activity.images[0]}}">
+            <div class="timeline-thumb bg-color-yellow timeline-icon">
+              <!--<img src="{{activity.images[0]}}"> -->
             </div>
             <div class="timeline-item">
               <h6 style="padding-top: 10px;">{{place.name}}</h6>
               <h6>{{activity.name}}</h6>
               <div class="timeline-stats">
-                <i class="ion-heart"></i> {{activity.price | currency}}
+                {{activity.price | currency}}
                 <span class="pos-absolute-right">
-                  <i class="ion-ios-clock"></i>{{activity.time + ' minutos'}}</span>
+                  {{activity.time + ' minutos'}}</span>
               </div>
             </div>
           </li>

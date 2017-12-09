@@ -5,4 +5,5 @@ export interface Rute {
     stars: number;
     towns: Array<Town>;
     plan: string;
+    image: string;
 }
